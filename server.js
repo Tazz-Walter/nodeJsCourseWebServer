@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
+
 var app = express();
 // partials es para poder hacer partes de paginas parciales
 //asi como hacer el footer generico
@@ -63,6 +65,7 @@ app.get('/bad', (req, res) => {
     error: 'Houston we have a problem!'
   });
 })
-app.listen(3000, () =>{
-  console.log('Server is up and running on port 3000');
+
+app.listen(port, () =>{
+  console.log(`Server is up and running on port ${port}`);
 });
